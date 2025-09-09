@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login & Signup • Nova</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ========== Nova Design System ========== */
+:root{
+  --bg: #0b0d10;
+  --panel: #0f1318;
+  --text: #f6f7f9;
+  --muted: #c2c7d1;
+  --primary: #6ea8fe;
+  --accent: #a78bfa;
+  --border: #233043;
+  --shadow: 0 10px 25px rgba(0,0,0,.35);
+}
+:root.light{
+  --bg: #f7f8fb;
+  --panel: #ffffff;
+  --text: #0f1720;
+  --muted: #4b5563;
+  --primary: #2563eb;
+  --accent: #7c3aed;
+  --border: #e5e7eb;
+  --shadow: 0 10px 25px rgba(2,6,23,.08);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  transition:background .3s,color .3s;
+}
+
+/* Auth Layout */
+.auth-body{display:grid; place-items:center; min-height:100vh; padding:16px;}
+.auth-card{
+  width:min(420px,90%);
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:24px;
+  box-shadow:var(--shadow);
+}
+.logo{
+  font-size:26px;
+  font-weight:800;
+  text-align:center;
+  display:block;
+  margin-bottom:20px;
+  text-decoration:none;
+  color:var(--text);
+}
+.logo span{color:var(--primary)}
+.tabs{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  background:color-mix(in hsl, var(--panel) 70%, transparent);
+  padding:6px;
+  border-radius:12px;
+  border:1px solid var(--border);
+  margin-bottom:16px;
+}
+.tab{
+  background:transparent;
+  border:none;
+  color:var(--text);
+  padding:10px;
+  border-radius:10px;
+  cursor:pointer;
+}
+.tab.active{background:var(--bg)}
+form{display:none;flex-direction:column;gap:14px}
+form.active{display:flex}
+label span{font-size:14px;color:var(--muted)}
+input{
+  width:100%;
+  padding:10px 12px;
+  background:var(--panel);
+  border:1px solid var(--border);
+  border-radius:12px;
+  color:var(--text);
+}
+input:focus{outline:2px solid color-mix(in hsl, var(--primary) 40%, transparent)}
+.checkbox{display:flex;align-items:center;gap:6px;font-size:14px;color:var(--muted)}
+.muted{color:var(--muted);font-size:14px;text-decoration:none}
+.row{display:flex;justify-content:space-between;align-items:center}
+.btn{
+  background:var(--primary);
+  color:white;
+  padding:10px;
+  border:none;
+  border-radius:12px;
+  font-size:16px;
+  font-weight:600;
+  cursor:pointer;
+}
+.btn:hover{opacity:.9}
+
+/* Theme Toggle Button */
+.theme-toggle{
+  position:absolute;
+  top:20px;
+  right:20px;
+  background:var(--primary);
+  color:white;
+  border:none;
+  padding:8px 14px;
+  border-radius:10px;
+  cursor:pointer;
+  font-size:14px;
+}
+</style>
+</head>
+<body class="auth-body">
+
+<button class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
+
+<main class="auth-card">
+  <a class="logo" href="#">Nova<span>.</span></a>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button class="tab active" onclick="showForm('login')">Login</button>
+    <button class="tab" onclick="showForm('signup')">Sign Up</button>
+  </div>
+
+  <!-- Login Form -->
+  <form id="login" class="active">
+    <label>
+      <span>Email</span>
+      <input type="email" name="email" required>
+    </label>
+    <label>
+      <span>Password</span>
+      <input type="password" name="password" minlength="6" required>
+    </label>
+    <div class="row">
+      <label class="checkbox">
+        <input type="checkbox"> Remember me
+      </label>
+      <a href="#" class="muted">Forgot?</a>
+    </div>
+    <button type="submit" class="btn">Login</button>
+  </form>
+
+  <!-- Signup Form -->
+  <form id="signup">
+    <label>
+      <span>Full Name</span>
+      <input type="text" name="name" required>
+    </label>
+    <label>
+      <span>Email</span>
+      <input type="email" name="email" required>
+    </label>
+    <label>
+      <span>Password</span>
+      <input type="password" name="password" minlength="6" required>
+    </label>
+    <button type="submit" class="btn">Create Account</button>
+  </form>
+</main>
+
+<script>
+function showForm(formId){
+  document.querySelectorAll('form').forEach(f=>f.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById(formId).classList.add('active');
+  event.target.classList.add('active');
+}
+
+function toggleTheme(){
+  const root=document.documentElement;
+  root.classList.toggle('light');
+  const btn=document.querySelector('.theme-toggle');
+  if(root.classList.contains('light')){
+    btn.textContent='🌙 Dark';
+  }else{
+    btn.textContent='☀️ Light';
+  }
+}
+</script>
+</body>
+</html>

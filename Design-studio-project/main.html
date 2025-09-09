@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nova — Modern Multipurpose Template</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header / Nav -->
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#" class="logo">Nova<span>.</span></a>
+      <nav id="primaryNav" class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#shop">Shop</a>
+        <a href="#contact">Contact</a>
+        <a class="btn ghost sm" href="newlogin.html">Login</a>
+        <!--<a class="btn ghost sm" href="login.html">Login</a>
+        <a class="btn ghost sm" href="signup.html">signup</a>-->
+        <a class="btn sm" href="dashboard.html">Dashboard</a>
+      </nav>
+      <button id="menuBtn" class="icon-btn" aria-label="Toggle Menu" aria-expanded="false">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+      <button id="themeBtn" class="icon-btn theme" aria-label="Toggle Theme">🌙</button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="section hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <h1>Build beautiful UIs faster.</h1>
+        <p>Create landing pages, portfolios, shops, and dashboards with one lightweight template.</p>
+        <div class="cta">
+          <a class="btn lg" href="#portfolio">Explore Work</a>
+          <a class="btn ghost lg" href="#shop">Browse Shop</a>
+        </div>
+        <ul class="benefits">
+          <li>Responsive • Mobile-first</li>
+          <li>Modern semantics</li>
+          <li>No frameworks required</li>
+        </ul>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <!-- Decorative SVG -->
+        <svg viewBox="0 0 600 400" class="blob">
+          <defs>
+            <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0%" stop-color="var(--grad-1)" />
+              <stop offset="100%" stop-color="var(--grad-2)" />
+            </linearGradient>
+          </defs>
+          <path fill="url(#g1)" d="M514 182c0 93-92 172-185 181-88 9-176-46-201-129-24-80 22-171 104-206 86-37 200 3 254 82 19 28 28 48 28 72z"/>
+        </svg>
+        <div class="card-stack">
+          <div class="glass-card">⚡ Lightning fast</div>
+          <div class="glass-card">🎯 Clean layout</div>
+          <div class="glass-card">🛠️ Reusable components</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section">
+    <div class="container two-col">
+      <div>
+        <h2>About Nova</h2>
+        <p>Nova is a minimal front‑end starter built with semantic HTML, modern CSS, and a sprinkle of JavaScript. It’s crafted to help you ship ideas quickly without wrestling with heavy toolchains.</p>
+        <ul class="checklist">
+          <li>Accessible components</li>
+          <li>Utility classes for spacing and layout</li>
+          <li>Dark mode support</li>
+        </ul>
+      </div>
+      <div class="feature-grid">
+        <div class="feature">
+          <div class="icon">💎</div>
+          <div>
+            <h3>Design System</h3>
+            <p>Scales from landing pages to dashboards with consistent tokens.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="icon">📦</div>
+          <div>
+            <h3>Components</h3>
+            <p>Cards, badges, tables, forms, and nav ready to reuse.</p>
+          </div>
+        </div>
+        <div class="feature">
+          <div class="icon">🚀</div>
+          <div>
+            <h3>Performance</h3>
+            <p>No frameworks; tiny CSS and JS footprint.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="section alt">
+    <div class="container">
+      <h2 class="center">Services</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Web Design</h3>
+          <p>Beautiful, accessible, and fast websites.</p>
+          <a class="btn sm" href="#contact">Get a quote</a>
+        </article>
+        <article class="card">
+          <h3>Branding</h3>
+          <p>Logos, palettes, and a clear visual language.</p>
+          <a class="btn sm" href="#contact">Start now</a>
+        </article>
+        <article class="card">
+          <h3>Development</h3>
+          <p>Clean, maintainable code with best practices.</p>
+          <a class="btn sm" href="#contact">Let’s build</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio" class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Portfolio</h2>
+        <div class="filters">
+          <button class="chip active" data-filter="all">All</button>
+          <button class="chip" data-filter="web">Web</button>
+          <button class="chip" data-filter="ui">UI</button>
+          <button class="chip" data-filter="brand">Brand</button>
+        </div>
+      </div>
+      <div class="grid gallery" id="portfolioGrid">
+        <!-- Six sample tiles -->
+        <figure class="tile" data-cat="web">
+          <img alt="Project 1" src="https://picsum.photos/seed/p1/600/400" />
+          <figcaption>Landing Page • Web</figcaption>
+        </figure>
+        <figure class="tile" data-cat="ui">
+          <img alt="Project 2" src="https://picsum.photos/seed/p2/600/400" />
+          <figcaption>Mobile UI • UI</figcaption>
+        </figure>
+        <figure class="tile" data-cat="brand">
+          <img alt="Project 3" src="https://picsum.photos/seed/p3/600/400" />
+          <figcaption>Brand Kit • Brand</figcaption>
+        </figure>
+        <figure class="tile" data-cat="web">
+          <img alt="Project 4" src="https://picsum.photos/seed/p4/600/400" />
+          <figcaption>Dashboard • Web</figcaption>
+        </figure>
+        <figure class="tile" data-cat="ui">
+          <img alt="Project 5" src="https://picsum.photos/seed/p5/600/400" />
+          <figcaption>Design System • UI</figcaption>
+        </figure>
+        <figure class="tile" data-cat="brand">
+          <img alt="Project 6" src="https://picsum.photos/seed/p6/600/400" />
+          <figcaption>Logo Set • Brand</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shop -->
+  <section id="shop" class="section alt">
+    <div class="container">
+      <h2 class="center">Shop</h2>
+      <div class="product-grid">
+        <!-- Product Card -->
+        <article class="product">
+          <div class="badge">New</div>
+          <img src="https://picsum.photos/seed/s1/500/350" alt="Product" />
+          <h3>Starter UI Kit</h3>
+          <p class="price">₹899</p>
+          <div class="row">
+            <button class="btn sm">Add to Cart</button>
+            <button class="btn ghost sm">Details</button>
+          </div>
+        </article>
+        <article class="product">
+          <img src="https://picsum.photos/seed/s2/500/350" alt="Product" />
+          <h3>Icon Pack</h3>
+          <p class="price">₹499</p>
+          <div class="row">
+            <button class="btn sm">Add to Cart</button>
+            <button class="btn ghost sm">Details</button>
+          </div>
+        </article>
+        <article class="product">
+          <div class="badge">Sale</div>
+          <img src="https://picsum.photos/seed/s3/500/350" alt="Product" />
+          <h3>Illustrations</h3>
+          <p class="price"><span class="strike">₹1299</span> ₹999</p>
+          <div class="row">
+            <button class="btn sm">Add to Cart</button>
+            <button class="btn ghost sm">Details</button>
+          </div>
+        </article>
+        <article class="product">
+          <img src="https://picsum.photos/seed/s4/500/350" alt="Product" />
+          <h3>Mockup Bundle</h3>
+          <p class="price">₹1499</p>
+          <div class="row">
+            <button class="btn sm">Add to Cart</button>
+            <button class="btn ghost sm">Details</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="container two-col">
+      <div>
+        <h2>Contact</h2>
+        <p>Have a project in mind? Send a message and I’ll get back to you.</p>
+        <ul class="contact-list">
+          <li>📧 hello@nova.site</li>
+          <li>📞 +91 98765 43210</li>
+          <li>📍 Coimbatore, India</li>
+        </ul>
+      </div>
+      <form id="contactForm" class="form">
+        <label>
+          <span>Name</span>
+          <input type="text" name="name" required />
+        </label>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" required />
+        </label>
+        <label>
+          <span>Message</span>
+          <textarea name="message" rows="4" required></textarea>
+        </label>
+        <button type="submit" class="btn">Send</button>
+        <p id="formMsg" class="muted"></p>
+      </form>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="logo" href="#">Nova<span>.</span></a>
+        <p class="muted">© <span id="year"></span> Nova Studio. All rights reserved.</p>
+      </div>
+      <nav class="footer-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#shop">Shop</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
